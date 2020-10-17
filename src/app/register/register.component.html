@@ -1,0 +1,47 @@
+<mat-card class= "register-card">
+    <mat-card-header>
+        <mat-card-title>
+            Register
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="userForm">
+            <table cellspacing="0"  class="full-width">
+                <tr>
+                    <td>
+                        <mat-form-field class="full-width">
+                            <input name="fullname" formControlName="fullname" matInput placeholder="Full Name" required>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="full-width">
+                            <input name="email" formControlName="email" matInput placeholder="Email" required type="email">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="full-width">
+                            <input name="password" formControlName="password" matInput placeholder="Password" required type="password">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="full-width">
+                            <input name="repeatPassword" formControlName="repeatPassword" matInput placeholder="Repeat Password" required type="password">
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="register()" color="primary">Register</button>
+        <span class="left-spacer">
+            Already have an account? <a [routerLink]="['/login']">login</a> here.
+        </span>
+    </mat-card-actions>
+</mat-card>
