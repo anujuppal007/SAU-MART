@@ -17,7 +17,7 @@ export class TokenStorageService {
   }
 
   getToken() {
-    window.localStorage.getItem(this.TOKEN_KEY);
+    return window.localStorage.getItem(this.TOKEN_KEY);
   }
 
   removeToken() {

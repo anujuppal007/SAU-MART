@@ -10,10 +10,14 @@ import { User } from './user';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnDestroy{
-  user: User;
+  user: any;
   userSubscription: Subscription;
+
   constructor(private authService: AuthService, private router: Router){
-    this.userSubscription = this.authService.getUser().subscribe(user => (this.user = user));
+    let a = 'anuj'
+    this.authService.findMe().subscribe(user => (this.user = user));
+    
+    this.userSubscription = this.authService.user.subscribe(user => (this.user = user));
   }
 
   logout(){
