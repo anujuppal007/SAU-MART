@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
@@ -21,14 +19,8 @@ const routes: Routes = [
     loadChildren: () => import('./products/products.module').then(mod => mod.ProductsModule)
   },
   {
-    path: 'login',
-    pathMatch: 'full',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    pathMatch: 'full',
-    component: RegisterComponent
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(mod => mod.AuthModule)
   }
 ];
 

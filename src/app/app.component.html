@@ -5,7 +5,7 @@
       <span class="left-spacer"></span>
       <a mat-button routerLink="/home" routerLinkActive="active-link">Home</a>
       <a mat-button routerLink="/products" routerLinkActive="active-link">Products</a>
-      <a mat-button routerLink="/login" *ngIf="!user" routerLinkActive="active-link">Login</a>
+      <a mat-button routerLink="/auth" *ngIf="!user" routerLinkActive="active-link">Login</a>
       <div>
         <a mat-button *ngIf="user" [matMenuTriggerFor]="menu">
           <mat-icon>account_circle</mat-icon>
