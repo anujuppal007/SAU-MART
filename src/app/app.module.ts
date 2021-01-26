@@ -7,9 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthHeaderInterceptorService } from './interceptors/auth-header-interceptor.service';
 import { SharedModule } from './shared/shared.module';
 import { BlocksModule } from './blocks/blocks.module';
+import { CoreModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -21,14 +21,8 @@ import { BlocksModule } from './blocks/blocks.module';
     BrowserAnimationsModule,
     SharedModule,
     HttpClientModule,
-    BlocksModule
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthHeaderInterceptorService,
-      multi: true
-    }
+    BlocksModule,
+    CoreModule
   ],
   bootstrap: [AppComponent]
 })
