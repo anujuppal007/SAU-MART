@@ -24,7 +24,7 @@
                 <tr>
                     <td>
                         <mat-error *ngIf = "error">
-                            {{error}}
+                            {{ error | async }}
                         </mat-error>
                     </td>
                 </tr>
