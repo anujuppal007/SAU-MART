@@ -4,13 +4,14 @@ export class Store<T> {
     state$ : Observable<T>;
     private _state$ : BehaviorSubject<T>;
 
-    constructor(initialState: T){
+    protected constructor(initialState: T){
         this._state$ = new BehaviorSubject<T>(initialState);
         this.state$ = this._state$.asObservable()
     }
 
+    // sync
     get state(){
-        return this._state$.getValue;
+        return this._state$.getValue();
     }
 
     protected setState(nexState: T): void {
